@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :sessions
   get :secret, to: "secrets#show"
   post '/logout' => 'sessions#destroy'
-  get '/login' => 'sessions#new'
+  get '/login' => 'sessions#new', as: :login
   post '/login' => 'sessions#create'
   resources :hello, to: "application#hello"
   # The priority is based upon order of creation: first created -> highest priority.

@@ -14,7 +14,7 @@ def create
   #if !params[:name] || params[:name].empty?
     if !params[:name] || params[:name].empty?
                        #   render :login
-       redirect_to controller: 'sessions', action: 'new'
+       redirect_to :login
     else
       session[:name] = params[:name]
       # byebug
@@ -29,7 +29,7 @@ def destroy
     redirect_to controller: 'application', action: 'hello'
   else 
     session[:name] = nil 
-    redirect_to controller: 'sessions', action: 'new'
+    redirect_to :login
   end
 end 
 
